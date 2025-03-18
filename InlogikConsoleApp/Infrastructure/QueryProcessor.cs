@@ -20,10 +20,10 @@ namespace InlogikConsoleApp.Infrastructure
             return readProjectHandler.Handle(query, projects);
         }
 
-        public IEnumerable<Message> ProcessWall(string username, Dictionary<string, Project> projects)
+        public IEnumerable<Message> ProcessWall(string username, Dictionary<string, User> users, Dictionary<string, Project> projects)
         {
             var query = new WallQuery(username);
-            return wallHandler.Handle(query, projects);
+            return wallHandler.Handle(query, users, projects);
         }
     }
 } 

@@ -16,15 +16,27 @@ namespace InlogikConsoleApp.Queries
 
     public class WallQueryHandler
     {
-        public IEnumerable<Message> Handle(WallQuery query, Dictionary<string, Project> projects)
+        // TODO Need to reformat the messages to follow such as "Apollo - Bob: Has anyone thought about the next release demo? (6 minutes ago)"
+        public IEnumerable<Message> Handle(WallQuery query, Dictionary<string, User> users, Dictionary<string, Project> projects)
         {
-            if (!projects.ContainsKey(query.username))
+            if (!users.ContainsKey(query.username))
             {
                 return Enumerable.Empty<Message>();
             }
 
-            return projects[query.username].messages
-                .OrderBy(m => m.timestamp)
+            var followedProjects = users[query.username].projects;
+            var allMessages = new List<Message>();
+
+            foreach (var projectName in followedProjects)
+            {
+                if (projects.ContainsKey(projectName))
+                {
+                    allMessages.AddRange(projects[projectName].messages);
+                }
+            }
+
+            return allMessages
+                .OrderByDescending(m => m.timestamp)
                 .ToList();
         }
     }
