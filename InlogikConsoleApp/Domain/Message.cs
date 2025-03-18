@@ -18,6 +18,7 @@ namespace InlogikConsoleApp.Domain
             this.timestamp = SystemClock.Instance.GetCurrentInstant();
         }
 
+        // TODO https://nodatime.org/2.4.x/api/NodaTime.SystemClock.html
         private string GetRelativeTimeString()
         {
             var now = SystemClock.Instance.GetCurrentInstant();

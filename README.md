@@ -40,7 +40,7 @@ cd InlogikConsoleApp && dotnet run
 
 The online references I used to better understand CQRS pattern and other materials related to C# refreshers.
 
-1. https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
-2. https://www.codeproject.com/Articles/5377617/CQRS-Pattern-in-Csharp-and-Clean-Architecture-A-Si
-3. https://nodatime.org/ - Datetime nuget package
-4. https://quickref.me/cs.html
+1. CQRS pattern - https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
+2. CQRS pattern in C# & Clean Architecture - https://www.codeproject.com/Articles/5377617/CQRS-Pattern-in-Csharp-and-Clean-Architecture-A-Si
+3. Datetime nuget package - https://nodatime.org/
+4. C# Naming Conventions Cheatsheet - https://cheatography.com/gregfinzer/cheat-sheets/c-naming-conventions/
