@@ -52,6 +52,39 @@ while (isRunning)
         commandProcessor.ProcessPostMessage(username, projectName, message);
         continue;
     }
+
+    // reading: <project name>
+    var readMatch = readRegex.Match(input);
+    if (readMatch.Success && !input.Contains("follows") && !input.Contains("wall"))
+    {
+        var projectName = readMatch.Groups[1].Value;
+        var messages = queryProcessor.ProcessReadProject(projectName, commandProcessor.GetProjects());
+
+        if (!messages.Any())
+        {
+            Console.WriteLine($"No messages found for project: {projectName}");
+        }
+        else
+        {
+            foreach (var message in messages)
+            {
+                Console.WriteLine(message);
+            }
+        }
+        continue;
+    }
+
+    // following: <user name> follows <project name>
+    var followMatch = followRegex.Match(input);
+    if (followMatch.Success)
+    {
+        var username = followMatch.Groups[1].Value;
+        var projectName = followMatch.Groups[2].Value;
+
+        commandProcessor.ProcessFollowProject(username, projectName);
+        Console.WriteLine($"{username} is now following project: {projectName}");
+        continue;
+    }
     
 
     Console.WriteLine("Unknown command format. Please try again.");
