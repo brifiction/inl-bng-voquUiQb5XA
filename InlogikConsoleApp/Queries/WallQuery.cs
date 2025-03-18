@@ -36,7 +36,7 @@ namespace InlogikConsoleApp.Queries
             }
 
             return allMessages
-                .OrderByDescending(m => m.timestamp)
+                .OrderBy(m => m.timestamp)
                 .ToList();
         }
     }
