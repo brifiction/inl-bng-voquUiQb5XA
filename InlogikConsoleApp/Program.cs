@@ -85,6 +85,21 @@ while (isRunning)
         Console.WriteLine($"{username} is now following project: {projectName}");
         continue;
     }
+
+    // wall: <user name> wall
+    var wallMatch = wallRegex.Match(input);
+    if (wallMatch.Success)
+    {
+        var userName = wallMatch.Groups[1].Value;
+        var messages = queryProcessor.ProcessWall(userName, commandProcessor.GetUsers(), commandProcessor.GetProjects());
+
+        Console.WriteLine($"{userName}'s wall:");
+        foreach (var message in messages)
+        {
+            Console.WriteLine(message);
+        }
+        continue;
+    }
     
 
     Console.WriteLine("Unknown command format. Please try again.");
