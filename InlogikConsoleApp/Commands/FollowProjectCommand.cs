@@ -19,7 +19,17 @@ namespace InlogikConsoleApp.Commands
     {
         public void Handle(FollowProjectCommand command, Dictionary<string, User> users, Dictionary<string, Project> projects)
         {
-            // TODO: Implement the logic to follow a project
+            if (!users.ContainsKey(command.username))
+            {
+                users[command.username] = new User(command.username);
+            }
+
+            if (!projects.ContainsKey(command.projectName))
+            {
+                projects[command.projectName] = new Project(command.projectName);
+            }
+
+            users[command.username].FollowProject(command.projectName);
         }
     }
 }
