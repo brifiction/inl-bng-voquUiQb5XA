@@ -16,6 +16,16 @@ namespace InlogikConsoleApp.Queries
 
     public class ReadProjectQueryHandler
     {
-        // TODO: Implement the logic to read a project
+        public IEnumerable<Message> Handle(ReadProjectQuery query, Dictionary<string, Project> projects)
+        {
+            if (!projects.ContainsKey(query.projectName))
+            {
+                return Enumerable.Empty<Message>();
+            }
+
+            return projects[query.projectName].messages
+                .OrderBy(m => m.timestamp)
+                .ToList();
+        }
     }
 } 
