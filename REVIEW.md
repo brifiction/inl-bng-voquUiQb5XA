@@ -45,11 +45,12 @@ Goal was to create reusability and clearly defined "repository classes" in the `
 The single-responsibility design principle was only applied at the last stretch of this exercise, due the same exercise challenges mentioned earlier.
 
 ## Tech debt & improvements
+
 - Need proper error handling throughout
 - Should add validation layer for commands
 - Consider adding configuration management
 - Documentation needs to be more comprehensive
-- To introduce unit testing with `xunit`, such as `dotnet new xunit -o Commands.Tests`.
+- To introduce unit testing with `xunit`, such as `dotnet new xunit -n InlogikConsoleApp.Tests` > `dotnet sln add InlogikConsoleApp.Tests/InlogikConsoleApp.Tests.csproj` > `dotnet add InlogikConsoleApp.Tests/InlogikConsoleApp.Tests.csproj reference InlogikConsoleApp/InlogikConsoleApp.csproj`.
 
 ## Extensibility / Scalability
 
