@@ -21,7 +21,12 @@ namespace InlogikConsoleApp.Commands
     {
         public void Handle(PostMessageCommand command, Dictionary<string, Project> projects)
         {
-            // TODO: Implement the logic to post a message
+            if (!projects.ContainsKey(command.projectName))
+            {
+                projects[command.projectName] = new Project(command.projectName);
+            }
+
+            projects[command.projectName].PostMessage(command.username, command.content);
         }
     }
 }
