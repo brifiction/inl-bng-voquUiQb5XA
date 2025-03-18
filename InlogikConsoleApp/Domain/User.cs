@@ -4,20 +4,20 @@ namespace InlogikConsoleApp.Domain
 {
     public class User
     {
-        public string UserName { get; private set; }
-        public List<string> Projects { get; private set; }
+        public string username { get; private set; }
+        public List<string> projects { get; private set; }
 
-        public User(string userName)
+        public User(string username)
         {
-            UserName = userName;
-            Projects = new List<string>();
+            this.username = username;
+            this.projects = new List<string>();
         }
 
         public void FollowProject(string projectName)
         {
-            if (!Projects.Contains(projectName))
+            if (!projects.Contains(projectName))
             {
-                Projects.Add(projectName);
+                projects.Add(projectName);
             }
         }
     }

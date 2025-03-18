@@ -4,18 +4,18 @@ namespace InlogikConsoleApp.Domain
 {
     public class Project
     {
-        public string Name { get; private set; }
-        public List<Message> Messages { get; private set; }
+        public string name { get; private set; }
+        public List<Message> messages { get; private set; }
 
         public Project(string name)
         {
-            Name = name;
-            Messages = new List<Message>();
+            this.name = name;
+            this.messages = new List<Message>();
         }
 
         public void PostMessage(string userName, string content)
         {
-            Messages.Add(new Message(content, userName, Name));
+            messages.Add(new Message(content, userName, name));
         }
     }
 }

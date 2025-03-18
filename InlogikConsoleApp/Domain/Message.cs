@@ -1,23 +1,25 @@
+using System;
+
 namespace InlogikConsoleApp.Domain
 {
     public class Message
     {
         public string content { get; set; }
-        public string userName { get; set; }
+        public string username { get; set; }
         public string projectName { get; set; }
         public DateTime timestamp { get; set; }
 
-        public Message(string content, string userName, string projectName)
+        public Message(string content, string username, string projectName)
         {
             this.content = content;
-            this.userName = userName;
+            this.username = username;
             this.projectName = projectName;
             this.timestamp = DateTime.Now;
         }
 
         public override string ToString()
         {
-            return $"{userName} -> @{projectName}: {content} ({timestamp.ToString("yyyy-MM-dd HH:mm:ss")})";
+            return $"{username} -> @{projectName}: {content} ({timestamp.ToString("yyyy-MM-dd HH:mm:ss")})";
         }
     }
 }
