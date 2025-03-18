@@ -2,7 +2,6 @@ using InlogikConsoleApp.Commands;
 using InlogikConsoleApp.Domain;
 using InlogikConsoleApp.Infrastructure.Interfaces;
 using InlogikConsoleApp.Infrastructure.Repositories;
-using System.Collections.Generic;
 
 namespace InlogikConsoleApp.Infrastructure
 {

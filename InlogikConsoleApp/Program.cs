@@ -1,9 +1,4 @@
-﻿// A more interactive C# console application in .NET 6
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using InlogikConsoleApp.Domain;
+﻿using System.Text.RegularExpressions;
 using InlogikConsoleApp.Infrastructure;
 
 // Initialize command and query processors
@@ -25,6 +20,7 @@ var postRegex = new Regex(@"^(\w+)\s+->\s+@(\w+)\s+(.+)$");
 var readRegex = new Regex(@"^(\w+)$");
 var followRegex = new Regex(@"^(\w+)\s+follows\s+(\w+)$");
 var wallRegex = new Regex(@"^(\w+)\s+wall$");
+// var newRegex = new Regex(@"^(\w+)\s+new\s+(\w+)$"); // new command to add
 bool isRunning = true;
 
 while (isRunning)
