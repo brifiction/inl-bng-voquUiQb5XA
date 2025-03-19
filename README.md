@@ -2,7 +2,7 @@
 
 This is a demo of a Inlogik Console App, that demonstrates how message boards work based on the general requirements below.
 
-![Inlogik Console Application Screenshot](2025-03-18_12-47-18.png)
+![Inlogik Console Application Screenshot](2025-03-20_10-54-28.png)
 
 ## General requirements
 
@@ -16,12 +16,16 @@ This is a demo of a Inlogik Console App, that demonstrates how message boards wo
    the correct commands. Just focus on the sunny day scenarios.
 1. NOTE: "posting:", "reading:", "following:" and "wall:" are not part of the command. All commands start
    with the user name, except for reading which starts with the project name.
+1. IMPORTANT: Implement the requirements focusing on writing the best code you can produce
+   implementing CQRS and SOLID principles.
 
 > IMPORTANT: Implement the requirements focusing on writing the best code you can produce implementing CQRS and SOLID principles
 
 ## Getting started
 
-Run `dotnet new console -f net6.0 -n InlogikConsoleApp`. Then install .Net 6.x SDK.
+Run `dotnet new console -f net6.0 -n InlogikConsoleApp`.
+
+> See https://dotnet.microsoft.com/en-us/download/dotnet/6.0, for .Net 6.0 SDK download (EOL, `6.0.36`).
 
 ## Running the console application
 
@@ -30,11 +34,12 @@ cd InlogikConsoleApp && dotnet build
 cd InlogikConsoleApp && dotnet run
 ```
 
-## TODO
+## Developer notes
 
-- There minor issues still present in better handling of Program runtime.
+- There minor issues still present in better handling of Program runtime. Thus, plenty of room for improvements.
 - Follow the TODO comments for code author notes.
-- Single-responsibility design principle was only implemented in this demo app.
+- Single-responsibility design principle was only implemented in this demo console app. And implement more such Liskov etc, when possible - it's good learnings to attempt.
+- Unit testing should be considered, learn more about `xunit` for providing 100% code coverage on this demo console app.
 
 ## References
 
