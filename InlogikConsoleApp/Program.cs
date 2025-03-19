@@ -84,7 +84,6 @@ while (isRunning)
 
     // wall: <user name> wall
     var wallMatch = wallRegex.Match(input);
-    // TODO Need to handle empty "wall of messages"
     if (wallMatch.Success)
     {
         var userName = wallMatch.Groups[1].Value;

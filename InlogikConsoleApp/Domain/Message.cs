@@ -19,7 +19,7 @@ namespace InlogikConsoleApp.Domain
         }
 
         // TODO https://nodatime.org/2.4.x/api/NodaTime.SystemClock.html
-        private string GetRelativeTimeString()
+        public string GetRelativeTimeString()
         {
             var now = SystemClock.Instance.GetCurrentInstant();
             var duration = now - timestamp;
@@ -52,11 +52,6 @@ namespace InlogikConsoleApp.Domain
             
             var years = (int)(duration.TotalDays / 365);
             return $"{years} {(years == 1 ? "year" : "years")} ago";
-        }
-
-        public override string ToString()
-        {
-            return $"{username} -> @{projectName}: {content} ({GetRelativeTimeString()})";
         }
     }
 }
